@@ -88,7 +88,8 @@ http://www.afasterinternet.com/participants.htm。
 
 当某个集群出现故障时，该集群对外通告的VIP会被撤回，路由更新之后，之前该集群服务的用户请求会被自动路由到次优集群，这对用户来说都是透明的，但是如果提供的服务是有状态的，会导致状态丢失，比如youtube视频播放会中断。
 
-如果不能部署anycast呢？你懂的
+如果不能部署anycast呢？来看看Dyn的DNS服务提供的anycast接入点你就明白了
+
 ![image](https://github.com/bigbighd604/wechat/blob/master/GSLBIsHard/images/DynAnycastNetworkMap.png)
 
 还有另外一种方法是通过BGP的route policy在不同的集群对外通告同一IP地址段的路由，这些路由当中只有一个是最优路径，DNS权威服务器根据用户所在区域和集群容量信息返回某一集群VIP，正常请下对该VIP的数据包会被路由到本集群，当该集群故障时，其他集群对外通告的路由会生效，从而流量会被路由到其他健康的集群。同样会对有状态服务造成影响。
