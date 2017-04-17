@@ -22,7 +22,7 @@
 
 这在过去几十年内工作的很好，以至于微秒渐渐淡出了人们的视野。下图是利用Google ngram绘制的，从1800到2012年书中提及的纳秒、微秒和毫秒的趋势图。
 
-![image](https://github.com/bigbighd604/wechat/blob/master/EraOfMicrosecond/images/ngram.png)
+![image](https://github.com/bigbighd604/wechat/blob/master/EraOfMicrosecond/images/ngrams.png)
 
 
 ## 趋势
@@ -78,7 +78,3 @@
 长期内，计算机科学家们需要设计针对微秒级别事件的系统，以及更底层的优化：比如减少lock contention、同步、以及更低开销的中断处理、任务调度等，总之专门针对微秒级别的优化。
 
 这些针对微秒级别的优化设计，以及这些高速I/O会引发新一轮的软件和编程模型进化，通过更好的利用这些超低延迟的通信机制，可以显著提高数据中心的有效计算能力！
-
-On the hardware side, new ideas “ideas are needed to enable context switching across a large number of threads (tens to hundreds per processor, though finding the sweet spot is an open question) at extremely fast latencies (tens of nanoseconds). … System designers need new hardware optimizations to extend the use of synchronous blocking mechanisms and thread-level parallelism to the micro-second range.”
-
-
